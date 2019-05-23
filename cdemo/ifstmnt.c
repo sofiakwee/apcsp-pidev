@@ -11,10 +11,23 @@ int main()
   }
   else if (a == b)
   {
-     printf("a is equal to b")
-  else
+     printf("a is equal to b\n");
+} 
+ else if (a != b)
+  {
+     printf("a is not equal to b\n");
+  }
+  else if ( a > b)
+{
+    printf("a is greater than b\n");
+}
+   else if (a == 0 || b == 0)
+{
+    printf("a is equal to 0 or b is equal to 0\n");
+}
+ else
   {
     printf("a is not 0\n");
   }
-    
+
 }
