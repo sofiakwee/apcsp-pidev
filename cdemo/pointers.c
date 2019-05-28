@@ -23,22 +23,21 @@ int main()
 
   ptrtoc = &c;
   c = 2.5;
-  printf("The value of c is %f\n", c);
-
-  *ptrtoc = 7;
-  printf("The value of c is %f\n", c);
-
-  printf("the value of ptrtoc is %d\n", ptrtoc);
-  printf("It stores the value %d\n", *ptrtoc);
-  printf("The adress of c is %d\n", &c);
+  printf("The value of c is %f\n and the adress is %d\n", c, ptrtoc);
 
   float d = 3.7;
   float* ptrtod;
  
   ptrtod = &d;
-  c = 3.7;
+  d = 3.7;
 
-  printf("the value of d is %f\n and the adress is %d\n", d, ptrtoc);
+  printf("the value of d is %f\n and the adress is %d\n", d, ptrtod);
 
+  int temp = 0;
+  temp = *ptrtod;
+ *ptrtod = *ptrtoc;
+  *ptrtoc = temp;
+
+  printf("the value of d is now %f\n and the value of c is now %f\n", d, c);
 }
 
