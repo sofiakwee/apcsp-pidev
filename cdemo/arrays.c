@@ -15,9 +15,9 @@ void main()
 
 void addArray(int* arr, int s, int n)
 {
-  for (int num = 0; num < s; num++)
+  for (int x = 0; x < s; x++)
 {
-arr[num]+ arr[num] + n;
-printf("%d\n", arr[num]);
+arr[x]+ arr[x] + n;
+printf("%d\n", arr[x]);
 }
 }
