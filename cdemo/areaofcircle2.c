@@ -8,20 +8,20 @@
   return area;
   }
 
-  int main ()
+  int main()
   {
   float a;
-  float b;
-  char input[30];
+  float radius;
+  char input[64];
   int c;
 
   {
 
   printf("what is the radius\n");
-  fgets(input, 30, stdin);
+  fgets(input, 64, stdin);
   sscanf(input, "&d", &c);
 
-  a = areaofcircle(c);
+  a = areaOfCircle(c);
   printf("The area is %f\n",a);
   }
   }
