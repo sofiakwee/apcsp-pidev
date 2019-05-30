@@ -1,29 +1,26 @@
-  #include <stdio.h>
+#include <stdio.h>
 
   float areaOfCircle(float radius)
 
   {
-  float area;
-  area = 3.14 * radius * radius;
+  float area = 3.14 * (radius *radius );
   return area;
   }
 
-  int main()
+  int main ()
   {
-  float a;
-  float radius;
   char input[64];
-  int c;
+  int d;
+  float c;
+  float radius;
 
-  {
 
   printf("what is the radius\n");
   fgets(input, 64, stdin);
-  sscanf(input, "&d", &c);
+  sscanf(input, "%d", &d);
 
-  a = areaOfCircle(c);
-  printf("The area is %f\n",a);
-  }
+  c = areaOfCircle(d);
+  printf("The area is %f\n", c);
   }
 
 
