@@ -1,37 +1,37 @@
 #include <stdio.h>
 #include <string.h>
 
-
-
 int main()
 {
-  // str1 is a pointer to a constant - cannot change the contents of str1
+
   char* str1 = "abcdefghijklmnopqrstuvwxyz";
-  
+
   printf("str1 : %s\n", str1);
 
-  // DO NOT DO THIS - attempt to modify a character in a string constant
-  //   compiler will not complain though
-  //*(str1 + 3) = 'c';
+  char str2[27];
+  for(int i = 0; i < 26; i++)
+    str2[i] = 'a' + i;
+  str2[26] = '\0';
 
-
-  
-  // str2 is an array which holds a copy of the string constant
-  char str2[7] = "hello2";
-  
   printf("str2 : %s\n", str2);
 
-  char* str2p = str2;
-  *(str2p + 3) = 'c';  // OK to modify array
-  printf("str2 : %s\n", str2p);
+
+  int result;
+  result = strcmp(str1, str2);
+  printf("strcmp(str1, str2) = %d\n", result);
+    
+  for (int i = 0; i < 26; i++)
+    str2[i] = str2[i] - 32;
+
+  printf("str2 : %s\n", str2);
+  result = strcmp(str1, str2);
+  printf("strcmp(str1, str2) = %d\n", result);
   
 
-  
-  // str3 is also an array which holds a copy of the constant
-  //   intialized to hold the string length
-  char str3[] = "this is a test";
-  printf("str3 : %s\n", str3);
 
-  str3[3] = 'f';
-  printf("str3 : %s\n", str3);
+  char str3[53];
+  strcpy(str3, str1);
+  strcat(str3, str2);
+  printf("%s\n", str3);
+
 }
