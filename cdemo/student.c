@@ -1,36 +1,54 @@
 #include <stdio.h>
+#include <string.h>
 
-  struct student {
-	char firstname[50];
-	char lastname[50];
-	int age;
-	int studentid;
-   void printStudent(struct Students* student);
-   int main()
+struct Student {
+  char firstname[256];
+  char lastname[256];
+  int age;
+  int studentid;
+};
+
+
+  void printStudentByVal(struct Student student)
 {
-   int studentid;
-   int studentid2;
-   int age;
-   int age2;
-   char input[64];
-   char firstname[256]
-   char firstname2[256]
-   char lastname[256]
-   char lastname2[256]
-   struct Students student1;
-   struct Students student2;
+  printf("my student is -\n");
+  printf("  firstname:%s\n", student.firstname);
+  printf("  lastname:%s\n", student.lastname);
+  printf("  age:%d\n", student.age);
+  printf("  studentid:%d\n", student.studentid);
+}
 
-  printf("what is your student's first name?");
-  fgets(input, 256, stdin);
-  sscan(input, "%s", firstname);
-  strcpy(student1.firstname
-  printf("what is your student's last name?");
-  fgets(input, 256, stdin);
-  sscan(input, "%s", lastname);
-  printf("what is you student's age?");
-  fgets(input, 256, stdin);
-  sscan(input, "%d", &age);
-  print("What is your student's student id?");
-  fgets(input, 256, stdin);
-  sscan(input, "%d", &studentid);
+  void printStudentByPtr(struct Student* student)
+{
+  printf("my student is-\n");
+  printf("  firstname:%s\n", student->firstname);
+  printf("  lastname:%s\n", student->lastname);
+  printf("  age:%d\n", student->age);
+  printf("  id:%d\n", student->studentid);
+}
 
+  int main()
+{
+  struct Student studentArr[50];
+
+  int y;
+  int i;
+
+  printf("How many students?");
+  scanf("%d",&y);
+
+  for (int i = 0; i<y; i++)
+  {
+
+    printf("Enter student's first name");
+    scanf("%s", studentArr[i].firstname);
+    printf("Enter student's last name");
+    scanf("%s", studentArr[i].lastname);
+    printf("Enter student's age");
+    scanf("%d", &studentArr[i].age);
+    printf("Enter student id");
+    scanf("%d", &studentArr[i].studentid);
+
+    printStudentByVal(studentArr[i]);
+  }
+}
